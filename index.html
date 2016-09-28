@@ -15,10 +15,37 @@
     
     <div>
         <br />
-        <p2>Vital Statistics</p2>
-        <br />
-        <br />
-        <p3>Please check here if you want a detailed analysis of your BMI:</p3>
+        <form method="get" action="process.php">
+            <fieldset>
+                <legend>Vital Statistics</legend>
+                <p>
+                    <label>Height:</label> 
+                    <input type="number" name="height"/>
+                    &nbsp; 
+                    <label>Units:</label>
+                    <select name="h-unit"
+                            <option>centimeters</option>
+                            <option>inches</option>
+                            <option>centimeters</option>
+                            
+                    </select>
+                </p>
+                <p>
+                    <label>Weight:</label>
+                    <input type="number" name="weight"/>
+                    &nbsp;
+                    <label>Units:</label>
+                    <select name="w-unit"
+                            <option>pounds</option>
+                            <option>pounds</option>
+                            <option>Kilograms</option>
+                    </select>
+                </p>
+                <p3>Please check here if you want a detailed analysis of your BMI:</p3>
+            </fieldset>
+        </form>
+        
+        
     </div>
     
     <br />
