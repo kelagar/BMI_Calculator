@@ -1,31 +1,40 @@
 <!DOCTYPE html>
-
-<html>
-
+<!--Title of the website-->
 <title> BMI-Calculator</title>
 
-<head lang="en">
+<html lang="en">
+
+
+
+<head>
      <meta charset="utf-8"/>
+
+    <!--Reference to the javascript file-->
+    <script src="Script1.js"></script>
+
+    <!--The header of the website-->
      <h1><font size="4">Body Mass Index Calculator</font></h1>
 
 </head>
 
 <body>
     
-   
+   <!--Breif Description of the calculator-->
     <p>Body Mass Index(BMI) is used as an indicator of total body fat. In order to calculate your BMI, please input your height and weight.</p>
     
+    <!--Start of the first form for Vital Statistics-->
     <div>
-        <br />
-        <form1 method="get" action="process.php">
+        
+        <form id="form1" method="get" action="process.php">
             <fieldset>
                 <legend>Vital Statistics</legend>
                 <p1>
                     <label>Height:</label>
-                    <input type="number" name="height" style="width: 75px;"/>
+                    <input id="height" type="number" name="height" style="width: 75px;"/>
+                    
                     &nbsp; 
                     <label1>Units:</label1>
-                    <select> name="h-unit"
+                    <select id="h-unit" name="h-unit" >
                             <option>centimeters</option>
                             <option>inches</option>
                                                         
@@ -35,68 +44,81 @@
                 
                 <p>
                     <label>Weight:</label>
-                    <input type="number" name="weight" style="width:75px;"/>
+                    <input id="weight" type="number" name="weight" style="width:75px;"/>
                     &nbsp;
                     <label1>Units:</label1>
-                    <select> name="w-unit"
+                    <select id="w-unit" name="w-unit">
                             <option>pounds</option>
                             <option>Kilograms</option>
                     </select>
                 </p>
                 
                     <label>Please check here if you want a detailed analysis of your BMI:</label>
-                    <input type="checkbox" name="details"/>
+                    <input id="details" type="checkbox" name="details"/>
                 
             </fieldset>
-        </form1>
+        </form>
         
         
         
     </div>
     
    
-
+    <!--Start of the second form for the contact information-->
     <div>
-        <form2 method="get" action="process.php">
+        <form id="form2" method="get" action="process.php">
             <fieldset>
                 <legend>Contact Information</legend>
                 <p3>
                 <label>Do you want your BMI sent to you by e-mail?</label>
-                    <input type="checkbox" name="email_option"/>
+                    <input id="check" type="checkbox" name="email_option"/>
                 </p3>
                 <br />
                 <p>
                     <label>E-mail Address:</label>
-                    <input type="email" name="email" style="width: 275px;" />
+                    <input id="email" type="email" name="email" style="width: 275px;" />
                
                
                </p>
 
                     <label>Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" name="name" style="width: 275px;" />
+                    <input id="name" type="text" name="name" style="width: 275px;" />
                
             </fieldset>
-        </form2>
+        </form>
         
     </div>
 
     
-
+    <!--Start of the last form for processing-->
     <div>
-        <form>
+        <form id="form3">
             <fieldset>
                 <legend>Processing</legend>
                 <p4>
-                    <button type="button">Compute your BMI</button>
+                    <input id="clickMe" type="button" value="Compute your BMI" onclick="doFunction();">
                     &nbsp;
-                    <button type="button">Reset form</button>
+                    <input id="clickMe" type="button" value="Reset form" onclick="doReset();">
                 </p4>
             </fieldset>
         </form>
         
     </div>
+
+    <div>
+        <form id="form4">
+            <fieldset>
+                <legend>Your BMI Results</legend>
+                
+                    <p id="Alert"></p>
+                
+            </fieldset>
+        </form>
+    </div>
 </body>
 <footer>
+
+    <!--Disclaimer for the calculator with link for reference-->
     <br />
     <p7>Total body fat is correlated to the risk of certain diseases which can be potentially fatal. BMI is valid for both men and women. However, it should only be used as 
     a guideline as it has some limitations. It may overestimate the body fat in muscular persons and underestimate the body fat in persons who have lost muscle mass.</p7>
