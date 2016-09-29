@@ -11,57 +11,88 @@
 </head>
 
 <body>
-    <p1>Body Mass Index(BMI) is used as an indicator of total body fat. In order to calculate your BMI, please input your height and weight.</p1>
+    
+   
+    <p>Body Mass Index(BMI) is used as an indicator of total body fat. In order to calculate your BMI, please input your height and weight.</p>
     
     <div>
         <br />
-        <form method="get" action="process.php">
+        <form1 method="get" action="process.php">
             <fieldset>
                 <legend>Vital Statistics</legend>
-                <p>
-                    <label>Height:</label> 
-                    <input type="number" name="height"/>
+                <p1>
+                    <label>Height:</label>
+                    <input type="number" name="height" style="width: 75px;"/>
                     &nbsp; 
-                    <label>Units:</label>
-                    <select name="h-unit"
+                    <label1>Units:</label1>
+                    <select> name="h-unit"
                             <option>centimeters</option>
                             <option>inches</option>
-                            <option>centimeters</option>
-                            
+                                                        
                     </select>
-                </p>
+                </p1>
+                
+                
                 <p>
                     <label>Weight:</label>
-                    <input type="number" name="weight"/>
+                    <input type="number" name="weight" style="width:75px;"/>
                     &nbsp;
-                    <label>Units:</label>
-                    <select name="w-unit"
-                            <option>pounds</option>
+                    <label1>Units:</label1>
+                    <select> name="w-unit"
                             <option>pounds</option>
                             <option>Kilograms</option>
                     </select>
                 </p>
-                <p3>Please check here if you want a detailed analysis of your BMI:</p3>
+                
+                    <label>Please check here if you want a detailed analysis of your BMI:</label>
+                    <input type="checkbox" name="details"/>
+                
+            </fieldset>
+        </form1>
+        
+        
+        
+    </div>
+    
+   
+
+    <div>
+        <form2 method="get" action="process.php">
+            <fieldset>
+                <legend>Contact Information</legend>
+                <p3>
+                <label>Do you want your BMI sent to you by e-mail?</label>
+                    <input type="checkbox" name="email_option"/>
+                </p3>
+                <br />
+                <p>
+                    <label>E-mail Address:</label>
+                    <input type="email" name="email" style="width: 275px;" />
+               
+               
+               </p>
+
+                    <label>Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" name="name" style="width: 275px;" />
+               
+            </fieldset>
+        </form2>
+        
+    </div>
+
+    
+
+    <div>
+        <form>
+            <fieldset>
+                <legend>Processing</legend>
+                <p4>
+                    <button type="button">Compute your BMI</button>
+                    &nbsp;
+                    <button type="button">Reset form</button>
+                </p4>
             </fieldset>
         </form>
-        
-        
-    </div>
-    
-    <br />
-
-    <div>
-        <p4>Contact Information</p4>
-        <p5>Do you want your BMI sent to you by e-mail?</p5>
-        <br />
-        <br />
-    </div>
-
-    
-
-    <div>
-        <br/>
-        <p6>Processing</p6>
         
     </div>
 </body>
@@ -71,7 +102,7 @@
     a guideline as it has some limitations. It may overestimate the body fat in muscular persons and underestimate the body fat in persons who have lost muscle mass.</p7>
     
     <br />
-
-    <p8>More information can be found at this BMI Calculator website. This website is based on the formula obtained from that site.</p8>
+    
+    <p>More information can be found at this <a href="http://www.bmi-calculator.net">BMI Calculator</a> website. This website is based on the formula obtained from that site.</p>
 </footer>
 </html>
