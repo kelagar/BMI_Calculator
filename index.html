@@ -1,130 +1,104 @@
 <!DOCTYPE html>
-<!--Title of the website-->
-<title> BMI-Calculator</title>
-
-<html lang="en">
-
-
-
+<html>
 <head>
-     <meta charset="utf-8"/>
-
-    <!--Reference to the javascript file-->
-    <script src="bmi.js"></script>
-
-    <!--The header of the website-->
-     <h1><font size="4">Body Mass Index Calculator</font></h1>
-
+    <title>Body Mass Index Calculator</title>
+    <script type="text/javascript" src="bmi.js"></script>
 </head>
-
 <body>
-    
-   <!--Breif Description of the calculator-->
-    <p>Body Mass Index(BMI) is used as an indicator of total body fat. In order to calculate your BMI, please input your height and weight.</p>
-    
-    <!--Start of the first form for Vital Statistics-->
-    <div>
-        
-        <form id="form1" method="get" action="process.php">
-            <fieldset>
-                <legend>Vital Statistics</legend>
-                <p1>
-                    <label>Height:</label>
-                    <input type="number" id="height" style="width: 75px;"/>
-                    
-                    &nbsp; 
-                    <label1>Units:</label1>
-                    <select id="h-unit" name="h-unit" >
-                            <option>centimeters</option>
+    <h4 class="Centered">Body Mass Index Calculator</h4>
+    <p>
+        Body Mass Index (BMI) is used as an indicator of total body fat. In
+        order to calculate your BMI, please input your height and weight.
+    </p>
+    <form id="bmiForm" action="" onsubmit="processBMIform()">
+        <fieldset>
+            <legend>Vital statistics</legend>
+            <table summary="Vital Statistics">
+                <tr>
+                    <td><label for="height">Height:</label></td>
+                    <td><input id="height" type="text" name="height" size="7" /></td>
+                    <td><label for="heightUnit">Units:</label></td>
+                    <td>
+                        <select id="heightUnit" name="heightUnit">
                             <option>inches</option>
-                                                        
-                    </select>
-                </p1>
-                
-                
-                <p>
-                    <label>Weight:</label>
-                    <input id="weight" type="number" name="weight" style="width:75px;"/>
-                    &nbsp;
-                    <label1>Units:</label1>
-                    <select id="w-unit" name="w-unit">
+                            <option>centimeters</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="weight">Weight:</label></td>
+                    <td><input id="weight" type="text" name="weight" size="7" /></td>
+                    <td><label for="weightUnit">Units:</label></td>
+                    <td>
+                        <select id="weightUnit" name="weightUnit">
                             <option>pounds</option>
-                            <option>Kilograms</option>
-                    </select>
-                </p>
-                
-                    <label>Please check here if you want a detailed analysis of your BMI:</label>
-                    <input id="details" type="checkbox" name="details"/>
-                
-            </fieldset>
-        </form>
-        
-        
-        
-    </div>
-    
-   
-    <!--Start of the second form for the contact information-->
-    <div>
-        <form id="form2" method="get" action="process.php">
-            <fieldset>
-                <legend>Contact Information</legend>
-                <p3>
-                <label>Do you want your BMI sent to you by e-mail?</label>
-                    <input id="check" type="checkbox" name="email_option"/>
-                </p3>
-                <br />
-                <p>
-                    <label>E-mail Address:</label>
-                    <input id="email" type="email" name="email" style="width: 275px;" />
-               
-               
-               </p>
+                            <option>kilograms</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <label for="details">
+                            Please check here if you
+                            want a detailed analysis of your BMI:
+                        </label> <input id="details"
+                                        type="checkbox" name="details" value="yes" />
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Contact Information</legend>
+            <table summary="E-mail">
+                <tr>
+                    <td colspan="2">
+                        <label for="wantMail">
+                            Do you want your BMI sent
+                            to you by e-mail?
+                        </label> <input id="wantMail" type="checkbox"
+                                        name="wantMail" value="yes" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="email">E-mail Address:</label></td>
+                    <td><input id="email" type="text" name="email" size="40" /></td>
+                </tr>
+                <tr>
+                    <td><label for="name">Name:</label></td>
+                    <td><input id="name" type="text" name="name" size="40" /></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Processing</legend>
+            <table summary="Processing">
+                <tr>
+                    <td><input type="submit" value="Compute your BMI" /></td>
+                    <td align="right"><input type="reset" value="Reset form" /></td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+    <p>
+        Total body fat is correlated to the risk of certain diseases which can
+        be potentially fatal. BMI is valid for both men and women. However, it
+        should only be used as a guideline as it has some limitations. It may
+        overestimate the body fat in muscular persons and underestimate the body
+        fat in persons who have lost muscle mass.
+    </p>
+    <p>
+        More information can be found at this <a href="http://www.bmi-calculator.net/">
+            BMI Calculator
+        </a> website. This website is based on the formula obtained from
+        that site.
+    </p>
 
-                    <label>Name:</label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input id="name" type="text" name="name" style="width: 275px;" />
-               
-            </fieldset>
-        </form>
-        
-    </div>
+    <p id="demo"></p>
 
-    
-    <!--Start of the last form for processing-->
-    <div>
-        <form id="form3">
-            <fieldset>
-                <legend>Processing</legend>
-                <p4>
-                    <input id="clickMe" type="button" value="Compute your BMI" onclick="doFunction();">
-                    &nbsp;
-                    <input id="clickMe" type="button" value="Reset form" onclick="doReset();">
-                </p4>
-            </fieldset>
-        </form>
-        
-    </div>
 
-    <div>
-        <form id="form4">
-            <fieldset>
-                <legend>Your BMI Results</legend>
-                
-                    <p id="Alert"></p>
-                
-            </fieldset>
-        </form>
-    </div>
+
+
+
+
 </body>
-<footer>
-
-    <!--Disclaimer for the calculator with link for reference-->
-    <br />
-    <p7>Total body fat is correlated to the risk of certain diseases which can be potentially fatal. BMI is valid for both men and women. However, it should only be used as 
-    a guideline as it has some limitations. It may overestimate the body fat in muscular persons and underestimate the body fat in persons who have lost muscle mass.</p7>
-    
-    <br />
-    
-    <p>More information can be found at this <a href="http://www.bmi-calculator.net">BMI Calculator</a> website. This website is based on the formula obtained from that site.</p>
-</footer>
 </html>
